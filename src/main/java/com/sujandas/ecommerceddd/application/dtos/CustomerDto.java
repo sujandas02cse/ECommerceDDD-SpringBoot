@@ -3,6 +3,21 @@ package com.sujandas.ecommerceddd.application.dtos;
 public class CustomerDto {
 
 
+    private  Long id;
+    private  String firstName;
+    private  String lastName;
+    private  String email;
+    private  String contactNumber;
+
+    public CustomerDto(Long id, String firstName, String lastName, String email, String contactNumber) {
+
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.contactNumber = contactNumber;
+    }
+
+
     public Long getId() {
         return id;
     }
@@ -42,24 +57,4 @@ public class CustomerDto {
     public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
     }
-
-    private  Long id;
-    private  String firstName;
-    private  String lastName;
-    private  String email;
-    private  String contactNumber;
-
-    public CustomerDto()
-    {}
-
-
-    public CustomerDto(Long id, String firstName, String lastName, String email, String contactNumber) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.contactNumber = contactNumber;
-    }
-
-
 }

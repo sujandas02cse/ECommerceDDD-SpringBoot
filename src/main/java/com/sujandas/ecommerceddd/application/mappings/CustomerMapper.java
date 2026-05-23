@@ -9,7 +9,7 @@ public class CustomerMapper {
     public  static CustomerDto toDto(Customer customer)
     {
         return  new CustomerDto(
-                (long) customer.getId(),
+                customer.getId(),
                 customer.getFirstName(),
                 customer.getLastName(),
                 customer.getEmail(),
