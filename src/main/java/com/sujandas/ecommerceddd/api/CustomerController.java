@@ -1,14 +1,15 @@
 package com.sujandas.ecommerceddd.api;
 
 
+import com.sujandas.ecommerceddd.application.dtos.CreateCustomerDto;
 import com.sujandas.ecommerceddd.application.dtos.CustomerDto;
 import com.sujandas.ecommerceddd.application.services.ICustomerService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/customers")
 public class CustomerController {
 
     private  final ICustomerService customerService;
@@ -18,12 +19,32 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
-    @GetMapping("/customers")
+    @GetMapping
     public List<CustomerDto> getAllCustomers()
     {
      // joy sree rama
         return  customerService.getAllCustomers();
 
     }
+
+
+    @GetMapping("/{id}")
+    public  CustomerDto getCustomerById(@PathVariable("id") Long id)
+    {
+        return  customerService.getCustomerById(id);
+
+    }
+
+    @PostMapping
+    public CustomerDto  createCustomer(@RequestBody CreateCustomerDto request)
+    {
+        return  customerService.createCustomer(request);
+
+    }
+
+
+
+
+
 
 }

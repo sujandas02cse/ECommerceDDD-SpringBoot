@@ -23,4 +23,14 @@ public class CustomerRepository implements ICustomerRepository {
         return customerJpaRepository.findAll();
 
     }
+
+    @Override
+    public Customer getCustomerById(Long id) {
+        return customerJpaRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public Customer save(Customer customer) {
+        return customerJpaRepository.save(customer);
+    }
 }

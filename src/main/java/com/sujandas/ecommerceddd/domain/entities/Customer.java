@@ -12,6 +12,9 @@ import jakarta.validation.constraints.Size;
 public class Customer {
 
 
+    public Customer(String firstName, String lastName, String email, String contactNumber) {
+    }
+
     public int getId() {
         return id;
     }

@@ -1,5 +1,6 @@
 package com.sujandas.ecommerceddd.application.services;
 
+import com.sujandas.ecommerceddd.application.dtos.CreateCustomerDto;
 import com.sujandas.ecommerceddd.application.dtos.CustomerDto;
 import com.sujandas.ecommerceddd.application.mappings.CustomerMapper;
 import com.sujandas.ecommerceddd.domain.entities.Customer;
@@ -27,4 +28,25 @@ public class CustomerService implements ICustomerService {
 
 
     }
+
+    @Override
+    public CustomerDto getCustomerById(Long id) {
+        Customer customer=customerRepository.getCustomerById(id);
+        return  CustomerMapper.toDto(customer);
+
+    }
+
+    @Override
+    public CustomerDto createCustomer(CreateCustomerDto request) {
+        Customer customer=new Customer(
+                request.getFirstName(),
+                request.getLastName(),
+                request.getEmail(),
+                request.getContactNumber());
+
+          Customer savedCustomer=customerRepository.save(customer);
+
+          return  CustomerMapper.toDto(savedCustomer);
+    }
 }
+
