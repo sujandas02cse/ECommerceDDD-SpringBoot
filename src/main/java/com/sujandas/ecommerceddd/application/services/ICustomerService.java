@@ -15,6 +15,4 @@ CustomerDto getCustomerById(Long id);
 CustomerDto createCustomer(CreateCustomerDto request);
 
 CustomerDto updateCustomer(Long id, UpdateCustomerDto updateCustomerDto);
-
-void deleteCustomer(Long id);
 }
