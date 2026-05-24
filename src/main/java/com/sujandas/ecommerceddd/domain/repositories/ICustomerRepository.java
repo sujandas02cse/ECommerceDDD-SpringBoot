@@ -11,4 +11,6 @@ List<Customer> getAllCustomers();
 Customer getCustomerById(Long id);
 
 Customer save(Customer customer);
+
+Customer update(Customer customer);
 }

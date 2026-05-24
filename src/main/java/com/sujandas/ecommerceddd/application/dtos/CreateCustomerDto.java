@@ -2,6 +2,23 @@ package com.sujandas.ecommerceddd.application.dtos;
 
 public class CreateCustomerDto {
 
+
+    private  String firstName;
+private  String lastName;
+private  String email;
+private  String contactNumber;
+
+
+    public CreateCustomerDto() {
+    }
+
+    public CreateCustomerDto(String firstName, String lastName, String email, String contactNumber) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.contactNumber = contactNumber;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -11,11 +28,11 @@ public class CreateCustomerDto {
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        LastName = lastName;
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -31,22 +48,6 @@ public class CreateCustomerDto {
     }
 
     public void setContactNumber(String contactNumber) {
-        this.contactNumber = contactNumber;
-    }
-
-    private  String firstName;
-private  String LastName;
-private  String email;
-private  String contactNumber;
-
-    public CreateCustomerDto() {
-
-    }
-
-    public CreateCustomerDto(String firstName, String lastName, String email, String contactNumber) {
-        this.firstName = firstName;
-        LastName = lastName;
-        this.email = email;
         this.contactNumber = contactNumber;
     }
 }

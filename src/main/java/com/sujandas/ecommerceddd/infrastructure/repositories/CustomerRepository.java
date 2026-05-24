@@ -33,4 +33,9 @@ public class CustomerRepository implements ICustomerRepository {
     public Customer save(Customer customer) {
         return customerJpaRepository.save(customer);
     }
+
+    @Override
+    public Customer update(Customer customer) {
+        return customerJpaRepository.update(customer);
+    }
 }

@@ -2,6 +2,7 @@ package com.sujandas.ecommerceddd.application.services;
 
 import com.sujandas.ecommerceddd.application.dtos.CreateCustomerDto;
 import com.sujandas.ecommerceddd.application.dtos.CustomerDto;
+import com.sujandas.ecommerceddd.application.dtos.UpdateCustomerDto;
 import com.sujandas.ecommerceddd.domain.entities.Customer;
 
 import java.util.List;
@@ -13,4 +14,6 @@ List<CustomerDto> getAllCustomers();
 CustomerDto getCustomerById(Long id);
 
 CustomerDto createCustomer(CreateCustomerDto request);
+
+CustomerDto updateCustomer(UpdateCustomerDto updateCustomerDto);
 }

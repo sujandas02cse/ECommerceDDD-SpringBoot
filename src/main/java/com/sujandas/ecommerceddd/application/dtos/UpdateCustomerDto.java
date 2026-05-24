@@ -1,7 +1,6 @@
 package com.sujandas.ecommerceddd.application.dtos;
 
-public class CustomerDto {
-
+public class UpdateCustomerDto {
 
     private  Long id;
     private  String firstName;
@@ -9,22 +8,16 @@ public class CustomerDto {
     private  String email;
     private  String contactNumber;
 
-
-    public CustomerDto() {
-
+    public UpdateCustomerDto() {
     }
 
-    public CustomerDto(Long id, String firstName, String lastName, String email, String contactNumber) {
-
-
-        this.id=id;
+    public UpdateCustomerDto(Long id, String firstName, String lastName, String email, String contactNumber) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.contactNumber = contactNumber;
     }
-
-
 
     public Long getId() {
         return id;

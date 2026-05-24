@@ -3,6 +3,7 @@ package com.sujandas.ecommerceddd.api;
 
 import com.sujandas.ecommerceddd.application.dtos.CreateCustomerDto;
 import com.sujandas.ecommerceddd.application.dtos.CustomerDto;
+import com.sujandas.ecommerceddd.application.dtos.UpdateCustomerDto;
 import com.sujandas.ecommerceddd.application.services.ICustomerService;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,6 +41,12 @@ public class CustomerController {
     {
         return  customerService.createCustomer(request);
 
+    }
+
+    @PostMapping
+    public  CustomerDto updateCustomer(@RequestBody UpdateCustomerDto updateCustomerDto)
+    {
+        return  customerService.updateCustomer(updateCustomerDto);
     }
 
 
