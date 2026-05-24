@@ -43,11 +43,12 @@ public class CustomerController {
 
     }
 
-    @PostMapping
-    public  CustomerDto updateCustomer(@RequestBody UpdateCustomerDto updateCustomerDto)
+    @PostMapping("/{id}")
+    public  CustomerDto updateCustomer(@PathVariable("id") Long id,@RequestBody UpdateCustomerDto updateCustomerDto)
     {
-        return  customerService.updateCustomer(updateCustomerDto);
+        return  customerService.updateCustomer(id,updateCustomerDto);
     }
+
 
 
 

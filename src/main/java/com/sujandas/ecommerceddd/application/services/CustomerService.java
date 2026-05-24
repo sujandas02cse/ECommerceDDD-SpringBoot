@@ -51,18 +51,18 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public CustomerDto updateCustomer(UpdateCustomerDto updateCustomerDto) {
+    public CustomerDto updateCustomer(Long id, UpdateCustomerDto updateCustomerDto) {
 
-        Customer customer=new Customer(
-                updateCustomerDto.getId(),
-                updateCustomerDto.getFirstName(),
-                updateCustomerDto.getLastName(),
-                updateCustomerDto.getEmail(),
-                updateCustomerDto.getContactNumber() );
+       Customer existingCustomer=customerRepository.getCustomerById(id);
 
-        Customer updatedCustomer=customerRepository.update(customer);
+       existingCustomer.setFirstName(updateCustomerDto.getFirstName());
+       existingCustomer.setLastName(updateCustomerDto.getLastName());
+       existingCustomer.setEmail(updateCustomerDto.getEmail());
+       existingCustomer.setContactNumber(updateCustomerDto.getContactNumber());
 
-        return  CustomerMapper.toDto(updatedCustomer);
+       Customer updatedCustomer=customerRepository.update(existingCustomer);
+
+       return  CustomerMapper.toDto(updatedCustomer);
 
     }
 }
