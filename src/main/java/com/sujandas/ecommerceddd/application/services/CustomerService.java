@@ -65,5 +65,11 @@ public class CustomerService implements ICustomerService {
        return  CustomerMapper.toDto(updatedCustomer);
 
     }
+
+    @Override
+    public void deleteCustomer(Long id) {
+    Customer existingCustomer=customerRepository.getCustomerById(id);
+    customerRepository.delete(existingCustomer);
+    }
 }
 

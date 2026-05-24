@@ -39,5 +39,10 @@ public class CustomerRepository implements ICustomerRepository {
         return customerJpaRepository.save(existingCustomer);
     }
 
+    @Override
+    public void delete(Customer existingCustomer) {
+        customerJpaRepository.delete(existingCustomer);
+    }
+
 
 }

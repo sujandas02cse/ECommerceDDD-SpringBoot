@@ -14,4 +14,6 @@ Customer save(Customer customer);
 
 
 Customer update(Customer existingCustomer);
+
+void delete(Customer existingCustomer);
 }
