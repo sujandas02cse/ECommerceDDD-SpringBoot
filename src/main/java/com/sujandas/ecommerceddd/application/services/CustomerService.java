@@ -68,8 +68,10 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public void deleteCustomer(Long id) {
-    Customer existingCustomer=customerRepository.getCustomerById(id);
-    customerRepository.delete(existingCustomer);
+        Customer existingCustomer=customerRepository.getCustomerById(id);
+        customerRepository.delete(existingCustomer);
     }
+
+
 }
 
