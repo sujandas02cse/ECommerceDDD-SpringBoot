@@ -1,4 +1,9 @@
 package com.sujandas.ecommerceddd.application.services;
 
-public interface IProductService {
+import com.sujandas.ecommerceddd.application.dtos.ProductDto;
+
+import java.util.List;
+
+public interface IProductService  {
+    List<ProductDto> getAllProducts();
 }

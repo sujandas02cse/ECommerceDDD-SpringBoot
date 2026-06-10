@@ -1,33 +1,20 @@
-package com.sujandas.ecommerceddd.domain.entities;
+package com.sujandas.ecommerceddd.application.dtos;
 
+public class ProductDto {
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "products")
-public class Product {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Long id;
-
-    @Column(nullable = false,length = 255)
+    private Long id;
     private String name;
-
-    @Column(length = 100)
-    private String description;
-
-    @Column(nullable = false,length = 10)
+    private  String description;
     private  float price;
-
-    @Column(nullable = false,length = 10)
     private  int stockQuantity;
 
 
-    protected Product(){}
+    public ProductDto() {
+    }
 
 
-    public Product(String name, String description, float price, int stockQuantity) {
+    public ProductDto(Long id, String name, String description, float price, int stockQuantity) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
