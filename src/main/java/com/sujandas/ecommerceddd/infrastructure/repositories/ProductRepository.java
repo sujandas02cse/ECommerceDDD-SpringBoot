@@ -19,4 +19,14 @@ private  final IProductJpaRepository productJpaRepository;
     public List<Product> getAllProducts() {
         return productJpaRepository.findAll();
     }
+
+    @Override
+    public Product getProductById(Long id) {
+        return productJpaRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public Product createProduct(Product product) {
+        return productJpaRepository.save(product);
+    }
 }

@@ -1,11 +1,11 @@
 package com.sujandas.ecommerceddd.api;
 
 
+import com.sujandas.ecommerceddd.application.dtos.CreateProductDto;
 import com.sujandas.ecommerceddd.application.dtos.ProductDto;
 import com.sujandas.ecommerceddd.application.services.IProductService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.sujandas.ecommerceddd.application.services.ProductService;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,6 +25,24 @@ public class ProductController {
         return  productService.getAllProducts();
 
     }
+
+    @GetMapping("/{id}")
+    public  ProductDto getProductById(@PathVariable("id") Long id)
+    {
+        return productService.getProductById(id);
+
+    }
+
+    @PostMapping
+    public ProductDto createProduct(@RequestBody CreateProductDto request)
+    {
+        return productService.createProduct(request);
+
+    }
+
+
+
+
 
 
 }
